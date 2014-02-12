@@ -1,0 +1,29 @@
+<h1> NOTES on Implementing Unicast (UDP) to multicast (UDP) </h1>
+Date: 2014-01-29
+
+<p>
+<b>Purpose:</b> In testing an application that involved Google glass it seem prudent to implement a simple middle server that could accept UDP packets and repurpose them for multicast. It should be noted that this (type of application) is implemented in many, many Internet routers, so this implementation is solely for our application. Meaning, this is a proof of concept - and NOT intended for commercial use.
+
+<p>
+<i>Before starting here are a few important notes.</i>
+<h2> On Multicast </h2>
+<ol>
+<li> It should be noted that multicast was originally intended as a way to send multimedia over the Internet and private networks. Multimedia has the implied meaning of <i>continous audio and video streams</i>.
+<dd>SEE: <a target=blank href=http://en.wikipedia.org/wiki/IP_multicast>http://en.wikipedia.org/wiki/IP_multicast</a>
+<li> Multicast network traffic on an IP network is determined by the destination IP address, not the PORT. The port is generally insignificant.
+<dd>SEE: <a target=blank href=http://www.rfc-editor.org/rfc/rfc5771.txt>http://www.rfc-editor.org/rfc/rfc5771.txt</a> (current standard)
+<dd>SEE: <a target=blank href=http://www.rfc-editor.org/rfc/rfc988.txt>http://www.rfc-editor.org/rfc/rfc988.txt</a> (original proposal)
+<li> One important IP address is 224.0.0.1 It is designated as the IP for "All Systems on this Subnet". Meaning, that all devices on a local area network (or subnet for larger network) should listen to traffic with the destination address of 224.0.0.1
+<dd>SEE: <a target=blank href=http://www.iana.org/assignments/multicast-addresses/multicast-addresses.xhtml>http://www.iana.org/assignments/multicast-addresses/multicast-addresses.xhtml</a>
+</ol>
+
+<h2> On Unicasting </h2>
+'UDP datagrams' and unicasting are synonymous for this purpose. 
+
+<h2> On Special Network IP Numbers </h2>
+<ol>
+<li> You can always get your IP on an a Unix system by issuing at the command-line: <i>ifconfig</i>
+<li> The network address <i>127.0.0.1</i> is reservered for the "localhost" - or your machine. That is, this IP number, often refered to as the "loopback", is intended for the machine to send message to itself via an internal socket. It is often used for testing, but can also be used for internal messaging. However, it is often consider "too heavy" for internal message, and often gives ways to other methods (such as shared memory).
+<li> The network address that ends with 255, such as 10.0.0.255, is defined as the "broadcast address". As such, if at the command line you type <i>ping 10.0.0.255</i>, every machine that is capable will respond.
+</ol>
+
