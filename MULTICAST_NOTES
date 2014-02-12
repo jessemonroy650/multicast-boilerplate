@@ -1,0 +1,46 @@
+= Multicast Notes =
+Date: 2014-01-29
+
+Not directly to this projects
+
+From:
+https://community.nest.com/message/2088
+
+You're looking at home automation solutions which can be controlled via a remote app on either an iOS, Android or Windows device. Viable options today 
+
+    Proprietary solutions such as Lutron HomeWorks (remote control via a smart phone is anticipated to occur in Feb 2013 - imminent)
+    Z-Wave - Leviton, GE, ... The primary downside is that the chips are single sourced (Sigma Designs).
+    Zigbee vendors include Control4, etc. Zigbee is a defined IEEE standard (802.15) which is starting to gather momentum.
+    Wifi controlled solutions.
+    X-10/ Insteon.
+
+ 
+
+If you're looking for a reliable solution (for a large number of devices) that also operates just like regular light switches right now, Lutron HomeWorks is the best option.
+
+ 
+
+If you intend to start small and grow the system, Zigbee or Z-Wave may be good starting points. Z-Wave devices are cheaper and more readily available today.
+
+In the long run, Zigbee will probably be the winner as the chip solutions are available from various vendors.
+
+ 
+
+Wifi based switching solutions will probably be limited when compared with Zigbee or Z-Wave since
+
+    Zigbee was intended for use in ultra low power devices while Wifi chipsets typically require more computational power and consume more power.
+    Zigbee and Z-Wave implement a mesh network topology by default unlike Wifi which typically uses a spoke and hub topology. When the hub goes away, the system stops working. In addition, there are range issues with Wifi.
+
+ 
+
+X-10/ Insteon solutions work reasonably well for small systems ( 1 - 5 devices), but not for medium to large systems.
+
+ 
+
+All the above solutions would cost quite a bit when scaled.
+
+ 
+
+A side note on power line data transmissions
+
+The HomePlug power line alliance is an industry grouping that implements ethernet type network over standard power lines. There are devices available today.
