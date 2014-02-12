@@ -16,7 +16,7 @@ Date: 2014-01-29
 :SEE: http://www.iana.org/assignments/multicast-addresses/multicast-addresses.xhtml
 
 == On Unicasting ==
-'UDP datagrams' and unicasting are synonymous for this purpose. 
+''UDP datagrams'' and unicasting are synonymous for this purpose. 
 
 == On Special Network IP Numbers ==
 # You can always get your IP on an a Unix system by issuing at the command-line: ''ifconfig''
